@@ -53,28 +53,27 @@ collection=db["test"]
 #     time.sleep(1)
 
 
-
-
-
-
-
-
 while True:
 
     
-    deviceId=1
     temperature, relative_humidity = tsl1.measurements
+    tsl1.measurements1 ={
+    "temperature":("Temperature: %0.1f C" % temperature),
+    "Humidity":("Humidity: %0.1f %%" % relative_humidity),
+    "timestamp":datetime.now().strftime('%y-%m-%d,%H:%M:%S,')
+
+    
+    }
+    deviceId=1
+    
     collection.update_one({'deviceId': deviceId,'nsamples':{'$lt':200}},
     {
-        '$push':{'samples':tsl1.measurements},
+        '$push':{'samples':tsl1.measurements1},
         '$inc':{'nsamples':1}
     },
     upsert=True
 
     )
-
-    
-    
 
     print("Temperature: %0.1f C" % temperature)
     print("Humidity: %0.1f %%" % relative_humidity)
