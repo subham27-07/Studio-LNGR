@@ -8,26 +8,10 @@ import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 import plotly.express as px
 
-
-from copy import deepcopy
-from bertopic import BERTopic
-
-import networkx as nx
-
-
-from nltk.featstruct import _default_fs_class
 from numpy import e
-import streamlit as st
 
 import streamlit.components.v1 as components
-from PIL import Image
-# import pandas as pd
-# import tweepy as tw
-# from nltk.corpus import stopwords
-# from sklearn.feature_extraction.text import CountVectorizer
-# from sklearn.decomposition import LatentDirichletAllocation as LDA
-import matplotlib.pyplot as plt
-import altair as alt
+
 import time
 import setuptools
 
@@ -38,7 +22,7 @@ from datetime import datetime
 
 df=pd.read_csv('https://raw.githubusercontent.com/subham27-07/Studio-LNGR/main/sensors_output2.csv')
 
-st.title ("StudioLNGR AMPS system Dashboard")
+st.title ("AMPS system Dashboard")
 # st.sidebar.title("Analysis of Tweets")
 st.markdown("This application is a Streamlit dashboard used to AMPS system")
 # st.sidebar.markdown("This application is a Strea
